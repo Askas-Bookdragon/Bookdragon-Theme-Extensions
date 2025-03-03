@@ -1,0 +1,75 @@
+/*
+
+### SUMMARY
+
+|_ Block Headers
+|_ Centered Headers
+|_ Underlined Headers
+
+*/
+
+/* ### BLOCK HEADERS */
+
+.block
+{
+    background: var(--primary-alt-colour);
+    padding: 5px 25px;
+    box-shadow: var(--box-shadow);
+}
+
+.block.red
+{
+    background: var(--bookdragon-red);
+    --h1-color: var(--text-colour-inverted);
+}
+
+.block.blue
+{
+    background: var(--bookdragon-blue);
+    --h1-color: var(--text-colour-inverted);
+}
+
+.block.green
+{
+    background: var(--bookdragon-green);
+    --h1-color: var(--text-colour-inverted);
+}
+
+/* ### CENTERED HEADERS */
+
+.center::before,
+.center::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 38%;
+  height: 2px;
+  background-color: var(--text-colour); /* Farbe der Linie */
+}
+
+.center::before {
+  left: 2%;
+}
+
+.center::after {
+  right: 2%;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+/* ### UNDERLINED HEADER */
+
+.line,.ln {
+    --underline-color: var(--text-colour);
+    border-bottom: 2px solid var(--underline-color); /* Unterstrich */
+    padding-bottom: 5px; /* Abstand zwischen Text und Linie */
+}
+
+/*.line.gold {
+    --underline-color: hsl(var(--primary-colour-h), calc(var(--primary-colour-s) - 40%), calc(var(--primary-colour-l) - 40%));
+}*/

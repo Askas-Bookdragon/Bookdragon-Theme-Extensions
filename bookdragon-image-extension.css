@@ -1,0 +1,36 @@
+/*
+### SUMMARY
+
+|_ BANNER MANIPULATION
+|_ IMAGE POSITIONS
+*/
+
+/* ### BANNER MANIPULATION */
+
+img[alt*="banner"] {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 0px;
+    clear: both;
+}
+
+/* ### IMAGE POSITIONS */
+
+img[alt~=left] {
+    float: left;
+    margin-right: 2%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+img[alt~=center] {
+    display: block;
+    justify-self: center;
+}
+
+img[alt~=right] {
+    float: right;
+    margin-left: 2%;
+    margin-bottom: 0px;
+}

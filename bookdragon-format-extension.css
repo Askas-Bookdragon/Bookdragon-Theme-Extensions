@@ -1,0 +1,55 @@
+/*
+### SUMMARY
+
+|_ COLUMNS
+|_ CONTAINER
+*/
+
+/* ### COLUMNS */
+
+.callout[data-callout~=columns] > .callout-title
+{
+    display: none;
+}
+
+.callout[data-callout~=columns]
+{
+    --columns: 3;
+    background: transparent;
+
+    margin: 0;
+    padding: 0;
+}
+.callout[data-callout~=columns] > .callout-content
+{
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    gap: 10px;
+}
+.callout[data-callout~=columns] > .callout-content > *
+{
+    margin: 10px;
+}
+
+.callout[data-callout~=columns][data-callout-metadata~="4"] {
+    --columns: 4;
+  }
+  .callout[data-callout~=columns][data-callout-metadata~="5"] {
+    --columns: 5;
+  }
+  .callout[data-callout~=columns][data-callout-metadata~="6"] {
+    --columns: 6;
+  }
+
+  /* ### CONTAINER */
+
+.callout[data-callout~=container] > .callout-title
+{
+    display: none;
+}
+.callout[data-callout~=container]
+{
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
