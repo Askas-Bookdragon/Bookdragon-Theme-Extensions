@@ -44,7 +44,7 @@
   top: 50%;
   width: 38%;
   height: 2px;
-  background-color: var(--text-colour); /* Farbe der Linie */
+  background-color: var(--h1-color); /* Farbe der Linie */
 }
 
 .center::before {
@@ -60,6 +60,8 @@
     justify-content: center;
     text-align: center;
     position: relative;
+
+    --h1-color: var(--text-colour)
 }
 
 /* ### UNDERLINED HEADER */
