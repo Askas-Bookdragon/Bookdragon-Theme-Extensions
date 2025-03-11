@@ -55,7 +55,7 @@
   right: 2%;
 }
 
-.center {
+.center, .center-clr {
     display: flex;
     justify-content: center;
     text-align: center;
