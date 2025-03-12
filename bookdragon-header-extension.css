@@ -40,19 +40,17 @@
 .center::before,
 .center::after {
   content: '';
-  position: absolute;
-  top: 50%;
-  width: 38%;
+  flex: 1;
   height: 2px;
   background-color: var(--h1-color); /* Farbe der Linie */
 }
 
 .center::before {
-  left: 2%;
+    margin-right: 40px;
 }
 
 .center::after {
-  right: 2%;
+    margin-left: 40px;
 }
 
 .center {
@@ -60,7 +58,7 @@
     justify-content: center;
     text-align: center;
     position: relative;
-
+    align-items: center;
     --h1-color: var(--text-colour)
 }
 
