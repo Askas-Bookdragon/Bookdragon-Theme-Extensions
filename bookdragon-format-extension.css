@@ -82,8 +82,8 @@
     cursor: pointer;
 }
 
-/* Stilisierung des Titels */
-.callout[data-callout="card"] .callout-title {
+/* Gilt nur für Publish-Seiten */
+body[data-page] .callout[data-callout="card"] .callout-title {
     display: none;
 }
 
