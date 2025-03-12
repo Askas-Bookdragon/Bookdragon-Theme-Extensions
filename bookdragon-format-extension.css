@@ -3,6 +3,8 @@
 
 |_ COLUMNS
 |_ CONTAINER
+|_ CARDS
+
 */
 
 /* ### COLUMNS */
@@ -25,12 +27,16 @@
     display: grid;
     grid-template-columns: repeat(var(--columns), 1fr);
     gap: 10px;
+    overflow: hidden;
 }
 .callout[data-callout~=columns] > .callout-content > *
 {
     margin: 10px;
 }
 
+.callout[data-callout~=columns][data-callout-metadata~="2"] {
+    --columns: 2;
+  }
 .callout[data-callout~=columns][data-callout-metadata~="4"] {
     --columns: 4;
   }
@@ -52,4 +58,58 @@
     background: transparent;
     margin: 0;
     padding: 0;
+}
+
+/* ### CARDS */
+
+/* Basisstil für Callouts vom Typ "card" */
+.callout[data-callout="card"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Zentriert den Inhalt */
+    justify-content: center;
+    text-align: center; /* Zentriert den Text */
+
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--background-secondary);
+    
+    max-width: 400px; /* Maximale Breite für die Karte */
+    justify-self: center; /* Sorgt dafür, dass die Card mittig in der Spalte ist */
+    width: max-content; /* Verhindert, dass die Card die ganze Spalte ausfüllt */
+
+    cursor: pointer;
+}
+
+/* Stilisierung des Titels */
+.callout[data-callout="card"] .callout-title {
+    display: none;
+}
+
+/* Falls ein Bild in der Card enthalten ist */
+.callout[data-callout="card"] img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.callout[data-callout="card"] .callout-icon {
+    display: none;
+}
+
+/* Falls stattdessen ein Beschreibungstext enthalten ist */
+.callout[data-callout="card"] .callout-content {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.callout[data-callout="card"]:hover {
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+}
+
+.callout[data-callout="card"] a {
+    text-decoration: none; /* Entfernt den Unterstrich */
+    color: inherit; /* Sorgt dafür, dass der Text die normale Schriftfarbe behält */
 }
