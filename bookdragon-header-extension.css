@@ -59,7 +59,7 @@
     text-align: center;
     position: relative;
     align-items: center;
-    --h1-color: var(--text-colour)
+    --h1-color: var(--text-colour);
 }
 
 /* ### UNDERLINED HEADER */
