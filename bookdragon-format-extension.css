@@ -5,6 +5,7 @@
 |_ CONTAINER
 |_ CARDS
 |_ CALLOUT MANIPULATION
+|_ EMBEDED MANIPULATION
 
 */
 
@@ -142,6 +143,19 @@
 
 /* ### CALLOUT MANIPULATION */
 
-.callout[data-callout-metadata~="no-title"]  .callout-title {
+.callout[data-callout-metadata~="no-title"] .callout-title {
     display: none;
+}
+
+/* ### EMBEDED MANIPULATION */
+
+/*No border embed*/
+.internal-embed.markdown-embed:is([alt*=inline])
+{
+  border-style: none !important;
+  padding: 0;
+}
+.internal-embed.markdown-embed:is([alt*=inline]) .embed-title, .markdown-embed-title
+{
+  display: none;
 }
