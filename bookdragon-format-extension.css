@@ -17,7 +17,7 @@
 
 .callout[data-callout~=columns]
 {
-    --columns: 3;
+    --columns: 1;
     background: transparent;
 
     margin: 0;
@@ -37,16 +37,30 @@
 
 .callout[data-callout~=columns][data-callout-metadata~="2"] {
     --columns: 2;
-  }
+}
+.callout[data-callout~=columns][data-callout-metadata~="3"] {
+    --columns: 3;
+}
 .callout[data-callout~=columns][data-callout-metadata~="4"] {
     --columns: 4;
-  }
-  .callout[data-callout~=columns][data-callout-metadata~="5"] {
+}
+.callout[data-callout~=columns][data-callout-metadata~="5"] {
     --columns: 5;
-  }
-  .callout[data-callout~=columns][data-callout-metadata~="6"] {
+}
+.callout[data-callout~=columns][data-callout-metadata~="6"] {
     --columns: 6;
-  }
+}
+
+  /* # Passe Cards width für column anzahl an*/
+
+.callout[data-callout~=columns][data-callout-metadata~="2"] > .callout-content > .callout[data-callout="card"]
+{
+    width: var(--card-column-2-width);
+}  
+.callout[data-callout~=columns][data-callout-metadata~="3"] > .callout-content > .callout[data-callout="card"]
+{
+    width: var(--card-column-3-width);
+}
 
   /* ### CONTAINER */
 
@@ -61,13 +75,17 @@
     padding: 0;
 }
 
+.callout[data-callout~=container][data-callout-metadata~="center"] > .callout-content
+{
+    text-align: center;
+}
+
 /* ### CARDS */
 
 /* Basisstil für Callouts vom Typ "card" */
 .callout[data-callout="card"] {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Zentriert den Inhalt */
     justify-content: center;
     text-align: center; /* Zentriert den Text */
 
@@ -76,9 +94,11 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background-color: var(--background-secondary);
     
-    max-width: 400px; /* Maximale Breite für die Karte */
     justify-self: center; /* Sorgt dafür, dass die Card mittig in der Spalte ist */
-    width: max-content; /* Verhindert, dass die Card die ganze Spalte ausfüllt */
+    width: var(--card-column-2-width);
+
+    --card-column-2-width: 50%;
+    --card-column-3-width: 80%;
 
     cursor: pointer;
 }
@@ -88,9 +108,14 @@
     display: none;
 }
 
+.callout[data-callout="card"] .callout-title {
+    align-self: center;
+}
+
 /* Falls ein Bild in der Card enthalten ist */
 .callout[data-callout="card"] img {
-    max-width: 100%;
+    width: 100%;
+    max-width: 360px;
     border-radius: 8px;
     margin-top: 10px;
 }
