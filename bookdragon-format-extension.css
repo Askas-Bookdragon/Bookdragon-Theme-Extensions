@@ -4,6 +4,7 @@
 |_ COLUMNS
 |_ CONTAINER
 |_ CARDS
+|_ CALLOUT MANIPULATION
 
 */
 
@@ -83,7 +84,7 @@
 }
 
 /* Gilt nur für Publish-Seiten */
-body[data-page] .callout[data-callout="card"] .callout-title {
+.published-container .callout[data-callout="card"] .callout-title {
     display: none;
 }
 
@@ -112,4 +113,10 @@ body[data-page] .callout[data-callout="card"] .callout-title {
 .callout[data-callout="card"] a {
     text-decoration: none; /* Entfernt den Unterstrich */
     color: inherit; /* Sorgt dafür, dass der Text die normale Schriftfarbe behält */
+}
+
+/* ### CALLOUT MANIPULATION */
+
+.callout[data-callout-metadata~="no-title"]  .callout-title {
+    display: none;
 }
