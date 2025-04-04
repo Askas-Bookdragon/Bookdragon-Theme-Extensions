@@ -5,6 +5,7 @@
 |_ CONTAINER
 |_ CARDS
 |_ CALLOUT MANIPULATION
+|_ ADDITIONAL CALLOUTS
 |_ EMBEDED MANIPULATION
 
 */
@@ -145,6 +146,38 @@
 
 .callout[data-callout-metadata~="no-title"] .callout-title {
     display: none;
+}
+
+.callout[data-callout-metadata~="center"] .callout-content {
+    text-align: center;
+}
+
+/* ### ADDITIONAL CALLOUTS */
+.callout[data-callout="block"]
+{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: var(--background-secondary);
+}
+
+.callout[data-callout="block"].callout[data-callout-metadata~="red"]
+{
+    background-color: var(--bookdragon-red);
+}
+
+.callout[data-callout="block"].callout[data-callout-metadata~="blue"]
+{
+    background-color: var(--bookdragon-blue);
+}
+
+
+.callout[data-callout="block"] .callout-icon
+{
+    display: none;
+}
+
+.callout[data-callout="block"] .callout-title
+{
+    color: var(--text-color);
 }
 
 /* ### EMBEDED MANIPULATION */
