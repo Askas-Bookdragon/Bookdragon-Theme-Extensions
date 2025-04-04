@@ -68,6 +68,7 @@
     --underline-color: var(--text-colour);
     border-bottom: 2px solid var(--underline-color); /* Unterstrich */
     padding-bottom: 5px; /* Abstand zwischen Text und Linie */
+    margin-bottom: 10px;
 }
 
 /*.line.gold {
